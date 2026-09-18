@@ -86,3 +86,15 @@ v19 schedule + map interaction rework:
 - 9/29: Opera House moved to the morning before Taronga; bills moved from Surry Hills to the Bondi Beach branch for lunch; Bondi now goes directly to Surry Hills/The Rover instead of returning to Circular Quay. Confirmed The Rover 17:00-18:00 and Kingsleys 19:00-21:00 are unchanged.
 - Map UX: normal wheel/trackpad scrolling no longer zooms maps; touch/trackpad pinch zooms more slowly; + / - controls remain; a fullscreen button was added with a CSS fallback where Fullscreen API is unavailable.
 - Google Maps links now live in each schedule row. The link list under every map was removed, and map pins are visual only.
+
+v20 (9/27 lunch):
+- 9/27: added Garfish Manly ($2 oysters, 39 East Esplanade, Manly NSW 2095) at 12:30-13:30, right after the ferry arrival. Manly Beach now runs 13:30-15:15 and its note no longer says "lunch"; the 15:15 departure and the Dinner Cruise buffer are unchanged.
+- Pin map: Garfish Manly inserted between Manly Wharf and Manly Beach. Schedule rows renumbered 01-10.
+- ICS: new event 20260927-garfish (12:30-13:30); 20260929-manly (the 9/27 Manly Beach event) shifted to 13:30-15:15 with SEQUENCE bumped to 7.
+
+v21 (9/27 朝):
+- 9/27 now starts with breakfast at bills Darlinghurst (433 Liverpool St, the original store, 07:30 open, no weekend bookings): leave the stay 07:45, breakfast 08:15-09:15, transfer 09:15-10:00.
+- Luna Park cut from 75 min to 45 min (10:00-10:45) at the user's request; Harbour Bridge walk 10:45-11:30 and the F1 ferry 11:30-12:00 move up with it.
+- The 30 min freed up lands at Manly as a new 12:00-12:30 Manly Wharf / The Corso stroll, so Garfish 12:30-13:30 and everything after it (Manly Beach, return ferry, Eastern Pontoon 17:15, cruise 18:00-20:00) are unchanged.
+- bills Darlinghurst pin added to the day map; schedule rows renumbered 01-13.
+- ICS: new events 20260927-bills-transfer, 20260927-bills-breakfast and 20260927-manly-corso. 20260927-lunapark-transfer was repurposed as "bills -> Luna Park" (09:15-10:00) and lunapark / bridgewalk / ferry were retimed with bumped SEQUENCE.
