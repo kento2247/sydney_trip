@@ -98,3 +98,19 @@ v21 (9/27 朝):
 - The 30 min freed up lands at Manly as a new 12:00-12:30 Manly Wharf / The Corso stroll, so Garfish 12:30-13:30 and everything after it (Manly Beach, return ferry, Eastern Pontoon 17:15, cruise 18:00-20:00) are unchanged.
 - bills Darlinghurst pin added to the day map; schedule rows renumbered 01-13.
 - ICS: new events 20260927-bills-transfer, 20260927-bills-breakfast and 20260927-manly-corso. 20260927-lunapark-transfer was repurposed as "bills -> Luna Park" (09:15-10:00) and lunapark / bridgewalk / ferry were retimed with bumped SEQUENCE.
+
+v22 オフライン対応 / 通信量削減:
+- sw.js (Service Worker) を追加。初回アクセス時に 7 ページ + styles.css + app.js + pinmap.js + アイコン + .ics（合計約120KB）をまとめて端末に保存し、2回目以降は同一オリジンへの通信を一切せずに表示する。海外でも即座に開き、機内モード/圏外でも全ページ読める。
+- 写真 (upload.wikimedia.org) と地図タイル (tile.openstreetmap.org) はキャッシュ優先。一度表示したものは二度とダウンロードしない。タイルは最大1200枚で古いものから破棄。
+- 天気 (Open-Meteo) は6時間キャッシュ。同じ日のページを何度開いても6時間に1回しか通信しない。キャッシュ表示中は「9/19 10:30 取得」のように取得時刻を出す。オフライン時・API失敗時は直近の値を残す。
+- 写真13枚（約1.5MB）の先読みは初回アクセス時に自動・無表示で実行。出発前に一度開いておけば、現地では写真込みで完全オフラインになる。途中で中断しても、全部そろうまで次回アクセス時に残りを取得する（画面上のボタンや進捗表示は出さない）。
+- ドロワーに「キャッシュを削除」を追加。確認ダイアログののち syd-* のキャッシュと localStorage を全消去し、Service Worker を unregister してリロードする。表示が古い・おかしいときの強制リセット用（削除後は最新版を再ダウンロードするので Wi-Fi 環境で実行すること）。
+- manifest.webmanifest とアイコン (assets/icon.svg, icon-192.png, icon-512.png, apple-touch-icon.png) を追加。iPhone/Android のホーム画面に追加するとブラウザUIなしのアプリとして開ける。
+- ヒーロー写真を 1280px 幅から 960px 幅に変更（1枚あたり 150-300KB → 100-190KB）。
+- 本文に残っていた編集メモ（「Echo Pointは今回は外す」「確定枠。」「ICSでは18:45 Sydney時間相当で扱う」「元データに空港名がないため」など）を削除・書き換え。9/26, 9/29, 9/30 のスケジュール説明とNOTES。
+
+*** 重要: HTML / CSS / JS / .ics を編集したら sw.js 冒頭の VERSION を必ず上げること（v1 -> v2 ...）。***
+上げないと、すでにアクセスした端末では古いキャッシュが表示され続ける。VERSION を上げると
+次回アクセス時に新しいファイル一式を取り直し、自動で1回だけリロードして反映される。
+install 時のシェル取得は cache:'reload' 指定なので、VERSION を上げれば必ずネットワークから取り直す。
+ローカルで file:// から開いた場合、Service Worker は動かない（従来どおり毎回ネットワークから読む）。
