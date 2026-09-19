@@ -114,3 +114,10 @@ v22 オフライン対応 / 通信量削減:
 次回アクセス時に新しいファイル一式を取り直し、自動で1回だけリロードして反映される。
 install 時のシェル取得は cache:'reload' 指定なので、VERSION を上げれば必ずネットワークから取り直す。
 ローカルで file:// から開いた場合、Service Worker は動かない（従来どおり毎回ネットワークから読む）。
+
+v23 (9/28 昼):
+- 9/28 の 13:00-14:30 Lunchtime Sponsor Session（Darling Harbour Theatre）を、Grill'd World Square（58, Square Shopping Centre, 644-680 George St, Sydney NSW 2000）での昼食 13:10-14:10 に差し替え。両方は同時間帯なので同時には入れられない。
+- Royal Botanic Garden を 14:30-16:00 から 14:30-15:30 に短縮。World Square -> 植物園が約20分、植物園 -> ICC Sydney が約20-25分あり、16:00 の Show and tell に間に合わせるため。
+- 地図に Grill'd World Square のピンを ICC Sydney と植物園の間に追加。ICC Sydney ピンの note から Darling Harbour Theatre を削除。マップ見出しを DARLING SQUARE -> ICC SYDNEY -> WORLD SQUARE -> OPERA BAR に変更。
+- ICS: 既存の UID 20260928-sponsor を Grill'd の昼食イベントとして再利用（SEQUENCE:1）。イベントを消すのではなく上書きしたので、すでに取り込み済みのカレンダーでも Sponsor Session の予定がそのまま昼食に置き換わる（UID 名だけは sponsor のまま）。20260928-garden は 14:30-15:30 に変更し SEQUENCE:1。
+- sw.js の VERSION を v3 -> v4 に更新。

@@ -1,7 +1,7 @@
 /* Sydney 2026 Field Guide — offline cache.
    静的ファイルを書き換えたら必ず VERSION を上げること。
    上げないと、端末に残った古いキャッシュが表示され続ける。 */
-const VERSION = 'v3';
+const VERSION = 'v4';
 
 const SHELL = `syd-shell-${VERSION}`;
 const IMAGES = 'syd-images';
