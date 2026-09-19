@@ -135,3 +135,25 @@ v25 (9/26 荷物預け = Bounce):
 - 地図に「Bounce 荷物預け (23 Rawson Pl)」のピンを Central Station と Blackheath の間に追加。NOTES にも1行追加。
 - ICS: 20260926-storage / 20260926-bags を Bounce の内容に上書き（SUMMARY・LOCATION・DESCRIPTION、SEQUENCE:4 -> 5）。UIDは据え置きなので取り込み済みカレンダーでも上書きされる。時刻は 08:25–08:50 / 18:00–18:20 のまま。
 - styles.css に .booking 系を追加。sw.js の VERSION を v5 -> v6 に更新。
+
+v26 (9/29 朝食 = The BnG Cafe):
+- 9/29 の朝に The BnG Cafe（103-105 Quarry St, Ultimo NSW 2007）での朝食 07:00-07:40 を追加。宿（296 Bulwara Rd）から徒歩約4分。営業は平日 6:30-15:00・土日 7:00-15:00 なので、火曜の 07:00 入店は開店後。
+- 既存の「宿 -> Circular Quay」(07:45-08:15) を「The BnG Cafe -> Circular Quay」(07:40-08:15) に変更し、Googleマップの出発地をカフェの住所に差し替え。以降のスケジュール番号は 02-13 -> 03-14 に繰り下げ。
+- カフェ項目には検索リンクに加えて「宿から徒歩」の徒歩ルートリンクを併記。
+- 地図に「The BnG Cafe」のピンを宿の直後に追加（lat -33.8774 / lon 151.1954、Quarry St の OSM 座標から）。マップ見出しを BNG CAFE -> OPERA -> TARONGA -> BONDI -> SURRY HILLS に変更。ヒーロー文と NOTES にも1行追加。
+- ICS: 新規イベント UID 20260929-bng を Opera House の前に追加（07:00-07:40）。既存イベントの時刻は変更なし。
+- sw.js の VERSION を v6 -> v7 に更新。
+
+v27 (文字量の整理 + 予定ごとのリンク):
+- 各ページの地図見出し下にあった説明文（「番号は訪問順です」「Google Mapsリンクは上のスケジュール内に集約」など）を全ページ削除。見出しだけ残した。
+- NOTES から、スケジュール本文と内容が重複していた項目を削除。残したのは「スケジュールに書いていない準備・判断材料」だけ。
+  9/25: ETA（-> スケジュール01のリンクへ移動）。9/26: Grand Canyon所要 / Bounce詳細 / trackwork（NOTICEと重複）/ Taxi事前手配 / Chophouse営業時間。
+  9/27: bills / Luna Park / Harbour Bridge / Manly の4件。9/28: 朝食 / 昼食 / Sponsor Session / Show and tell / 移動時間 / Opera Bar の6件。
+  9/29: 朝食 / Opera House / bills / Bondi->The Rover / F2（NOTICEと重複）の5件。9/30: Visit Japan Web（-> スケジュール04のリンクへ移動）。
+- 冗長だったスケジュール本文を短縮: 9/26の01・05・07、9/28のOpera Bar（「Harbour Bridgeと…見ながら」-> 「予約不可のwalk-in」）、9/30の Tokyo 到着（「到着時刻は日本時間」は時刻欄のJST表記と重複）。
+- 予定ごとに必要なリンクをその予定の場所へ:
+  9/25「羽田空港 T3 集合」に ETA 確認、9/30「Tokyo 到着」に VISIT JAPAN WEB、9/26「宿 -> Chophouse Sydney」と 9/30「宿 出発」に UBER（m.uber.com のディープリンク、目的地設定済み）を追加。
+  9/25 NOTES の Visit Japan Web もリンク化。index.html の QUICK LINKS 側はそのまま（全体入口として残す）。
+- 9/29 の 13:10-14:00 が見出し「ランチ」だけで中身が無かったので、NOTES と .ics にあった bills Bondi Beach（79 Hall St）に統一し、Googleマップ／公式リンクを付けた。
+- styles.css に .editorial-list .inline-link{margin-top:0} を追加（NOTES 内リンクの余白調整）。
+- sw.js の VERSION は v7 のまま（v26 で更新済み・未公開のため）。
