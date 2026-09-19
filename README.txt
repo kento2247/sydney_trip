@@ -121,3 +121,17 @@ v23 (9/28 昼):
 - 地図に Grill'd World Square のピンを ICC Sydney と植物園の間に追加。ICC Sydney ピンの note から Darling Harbour Theatre を削除。マップ見出しを DARLING SQUARE -> ICC SYDNEY -> WORLD SQUARE -> OPERA BAR に変更。
 - ICS: 既存の UID 20260928-sponsor を Grill'd の昼食イベントとして再利用（SEQUENCE:1）。イベントを消すのではなく上書きしたので、すでに取り込み済みのカレンダーでも Sponsor Session の予定がそのまま昼食に置き換わる（UID 名だけは sponsor のまま）。20260928-garden は 14:30-15:30 に変更し SEQUENCE:1。
 - sw.js の VERSION を v3 -> v4 に更新。
+
+v24 (出費管理シート):
+- ハンバーガーメニュー（ドロワー）の TOOLS に「出費管理シート」を追加。割り勘フォームの直下、全7ページ共通。Google スプレッドシート（gid=1643533620）を別タブで開く。
+- index.html の QUICK LINKS（手続き）にも同じリンクを追加。割り勘フォームの直下。
+- sw.js の VERSION を v4 -> v5 に更新。
+
+v25 (9/26 荷物預け = Bounce):
+- 9/26 の荷物預け/回収を Smarte Carte（Central駅 Grand Concourse）から予約済みの Bounce に差し替え。店舗は Supermarket - 23 Rawson Place（Shop 3, 11-23 Rawson Place, Sydney NSW 2000、Central駅South側・徒歩3分）。受付は 9/26 08:00–24:00 で、その間なら預け入れ・受け取りの時刻指定なし。
+- 2026-09-26.html のスケジュール 02（08:25–08:50 預け）と 08（18:00–18:20 回収）を書き換え。どちらからも #bounce の予約カードに飛べる。
+- スケジュール直後に予約カード（id="bounce"）を追加。チェックインQR画像・PIN 214874・受付時間・住所・Googleマップ・予約ページへのリンク。QRは assets/bounce-qr.png としてローカルに置き、sw.js の SHELL_FILES に入れたのでオフラインでも表示できる（店頭で通信不要）。
+- QRの中身は https://partner.bounce.com/bookings?id=f38e8832-...&pin=5606（店側のチェックイン用URL。表示用PIN 214874とは別物）。
+- 地図に「Bounce 荷物預け (23 Rawson Pl)」のピンを Central Station と Blackheath の間に追加。NOTES にも1行追加。
+- ICS: 20260926-storage / 20260926-bags を Bounce の内容に上書き（SUMMARY・LOCATION・DESCRIPTION、SEQUENCE:4 -> 5）。UIDは据え置きなので取り込み済みカレンダーでも上書きされる。時刻は 08:25–08:50 / 18:00–18:20 のまま。
+- styles.css に .booking 系を追加。sw.js の VERSION を v5 -> v6 に更新。
