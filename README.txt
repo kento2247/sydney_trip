@@ -157,3 +157,9 @@ v27 (文字量の整理 + 予定ごとのリンク):
 - 9/29 の 13:10-14:00 が見出し「ランチ」だけで中身が無かったので、NOTES と .ics にあった bills Bondi Beach（79 Hall St）に統一し、Googleマップ／公式リンクを付けた。
 - styles.css に .editorial-list .inline-link{margin-top:0} を追加（NOTES 内リンクの余白調整）。
 - sw.js の VERSION は v7 のまま（v26 で更新済み・未公開のため）。
+
+v28 (9/29 夕食 = Blackbird Cafe):
+- 9/29 の 19:00-21:00 の夕食を Kingsleys Australian Steakhouse（29A King St）から Blackbird Cafe（Wheat Road Balcony Level 1, Cockle Bay Wharf, Darling Harbour NSW 2000）に差し替え。カンガルーステーキ $45。平日 8:00-21:30 営業。
+- スケジュール 13（The Rover → Blackbird Cafe）の Google マップ目的地、14 のリンク（MENU / 予約）、NOTES、ヒーロー文、地図ピン（lat -33.8726 / lon 151.2019）、マップ見出しを更新。
+- ICS: UID 20260927-kingsleys を Blackbird Cafe の内容に上書き（SEQUENCE:4 -> 5）。時刻は変更なし。
+- sw.js の VERSION を v7 -> v8 に更新。
