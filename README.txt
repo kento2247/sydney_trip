@@ -163,3 +163,16 @@ v28 (9/29 夕食 = Blackbird Cafe):
 - スケジュール 13（The Rover → Blackbird Cafe）の Google マップ目的地、14 のリンク（MENU / 予約）、NOTES、ヒーロー文、地図ピン（lat -33.8726 / lon 151.2019）、マップ見出しを更新。
 - ICS: UID 20260927-kingsleys を Blackbird Cafe の内容に上書き（SEQUENCE:4 -> 5）。時刻は変更なし。
 - sw.js の VERSION を v7 -> v8 に更新。
+
+v29 (宿 Airbnb + Wi-Fi):
+- 宿の Airbnb 予約ページ（https://www.airbnb.jp/rooms/49580120）へのリンクを、ドロワー TOOLS（全7ページ、出費管理シートの直下）、index.html の QUICK LINKS（Stay の直下）、9/26 スケジュール 09「宿 296 Bulwara Rd・着替え」に追加。
+- 9/26 に宿 Wi-Fi カード（id="stay"、Bounce カードの直後）を追加。SSID DN8245V-4B37 / パスワード L4QSTB6FSV を文字で表示し、接続用QR（WIFI:T:WPA;...）を assets/wifi-qr.png として同梱。sw.js の SHELL_FILES に入れたのでオフラインでも表示できる。
+- styles.css に .booking__pin--text を追加（SSID/パスワードをスマホ幅でも折り返して表示、タップで全選択）。
+- sw.js の VERSION を v8 -> v9 に更新。
+
+v30 (パスワードゲート):
+- 全7ページの <head> 先頭で assets/gate.js を同期読み込み。未認証のあいだはページ本体を描画せず、シドニーの夕景（Harbour Bridge / Opera House のシルエット、南十字星、水面のゆらぎ、シドニー現在時刻）の上にガラス調の入力カードを出す。
+- パスワードは SHA-256 ハッシュでのみ照合（平文はソースに置かない）。crypto.subtle が無い環境向けに JS 実装のフォールバックあり。
+- 一度通ると localStorage の "sydgate" に記録し、以後その端末・ブラウザでは表示しない。"syd-" で始まらないので「キャッシュを削除」でも消えない。ホーム画面に追加したアプリは Safari と保存領域が別なので、そちらで1回入力が必要。
+- 注意: クライアント側だけのロックなので、公開リポジトリ上のソースや assets/*.png、.ics を直接開けば中身は読める。「見られたくない人を門前払いする」程度の目隠し。
+- sw.js の SHELL_FILES に assets/gate.js を追加（VERSION は v9 のまま・未公開のため）。

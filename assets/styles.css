@@ -19,3 +19,4 @@
 
 /* v27: NOTES 内のインラインリンク */
 .editorial-list .inline-link{margin-top:0}
+.booking__pin--text{font-size:24px;letter-spacing:.06em;overflow-wrap:anywhere;user-select:all}

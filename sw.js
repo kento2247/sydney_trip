@@ -1,7 +1,7 @@
 /* Sydney 2026 Field Guide — offline cache.
    静的ファイルを書き換えたら必ず VERSION を上げること。
    上げないと、端末に残った古いキャッシュが表示され続ける。 */
-const VERSION = 'v8';
+const VERSION = 'v9';
 
 const SHELL = `syd-shell-${VERSION}`;
 const IMAGES = 'syd-images';
@@ -23,10 +23,12 @@ const SHELL_FILES = [
   '2026-09-29.html',
   '2026-09-30.html',
   'assets/styles.css',
+  'assets/gate.js',
   'assets/app.js',
   'assets/pinmap.js',
   'assets/icon.svg',
   'assets/bounce-qr.png',
+  'assets/wifi-qr.png',
   'assets/icon-192.png',
   'assets/icon-512.png',
   'assets/apple-touch-icon.png',
