@@ -176,3 +176,13 @@ v30 (パスワードゲート):
 - 一度通ると localStorage の "sydgate" に記録し、以後その端末・ブラウザでは表示しない。"syd-" で始まらないので「キャッシュを削除」でも消えない。ホーム画面に追加したアプリは Safari と保存領域が別なので、そちらで1回入力が必要。
 - 注意: クライアント側だけのロックなので、公開リポジトリ上のソースや assets/*.png、.ics を直接開けば中身は読める。「見られたくない人を門前払いする」程度の目隠し。
 - sw.js の SHELL_FILES に assets/gate.js を追加（VERSION は v9 のまま・未公開のため）。
+
+v31 (クルーズのチケット / 帰国便チェックイン / 通知):
+- 9/27: Harbour Dinner Cruise のチケットカード（id="cruise"、FERRY ALERT の直前）を追加。GetYourGuide の PDF から大人3名分の QR を assets/cruise-qr-1..3.png に切り出し（中身は https://fhchk.co/1d6BQf / 1d6BQg / 1d6BQh、読み取り確認済み）。予約番号 GYGZGZRHFVAF・PIN 8uLaPv2a・集合（Eastern Pontoon、シーロックグリル前のキオスク）・提供会社の電話・持ち物・バウチャーリンク。予定 12 / 13 から TICKET ↓ で飛べる。
+- 9/29: 08:55「帰国便 オンラインチェックイン」（9/30 08:55 発の24時間前）を 05 として追加し、以降を 06-15 に繰り下げ。NOTES に1行。ICS に 20260929-checkin（VALARM 付き）を追加。
+- 通知 (assets/notify.js): REMINDERS 配列に全日程の通知16件（集合・出発・予約・チェックインなど）。
+  1) sydney-2026-reminders.ics = 各通知を VALARM 付き予定にしたもの。カレンダーに入れれば OS が鳴らすので、圏外・ブラウザ終了中でも確実に届く。
+  2) ブラウザ通知 = 許可すると、サイトを開いている間は時刻どおりに Service Worker の showNotification で出す。開き直したときは直近20分の見逃し分も出す。タップすると該当ページが開く（sw.js の notificationclick）。サーバーが無いので、閉じている間に届く Push は使えない。iPhone はホーム画面に追加したアプリでのみ通知を許可できる。
+  ドロワー TOOLS の「通知」でパネルが開く（全件の ON/OFF、.ics 一括登録、ブラウザ通知の許可）。予定の行にも「🔔 hh:mm 通知」ボタンが付き、押すとオン／オフを切り替えられる。設定は localStorage の syd-notify-off / syd-notify-fired に保存。
+  REMINDERS を変えたら sydney-2026-reminders.ics も作り直すこと（notify.js の配列から生成している）。
+- notify.js・reminders.ics・QR 画像は sw.js の SHELL_FILES に入れたのでオフラインでも動く。VERSION を v9 -> v10 に更新。

@@ -1,7 +1,7 @@
 /* Sydney 2026 Field Guide — offline cache.
    静的ファイルを書き換えたら必ず VERSION を上げること。
    上げないと、端末に残った古いキャッシュが表示され続ける。 */
-const VERSION = 'v9';
+const VERSION = 'v10';
 
 const SHELL = `syd-shell-${VERSION}`;
 const IMAGES = 'syd-images';
@@ -25,15 +25,20 @@ const SHELL_FILES = [
   'assets/styles.css',
   'assets/gate.js',
   'assets/app.js',
+  'assets/notify.js',
   'assets/pinmap.js',
   'assets/icon.svg',
   'assets/bounce-qr.png',
   'assets/wifi-qr.png',
+  'assets/cruise-qr-1.png',
+  'assets/cruise-qr-2.png',
+  'assets/cruise-qr-3.png',
   'assets/icon-192.png',
   'assets/icon-512.png',
   'assets/apple-touch-icon.png',
   'manifest.webmanifest',
   'sydney-2026-itinerary.ics',
+  'sydney-2026-reminders.ics',
 ];
 
 /* 「オフライン保存」ボタンでまとめて取得する写真（Wikimedia）。 */
@@ -164,4 +169,17 @@ self.addEventListener('message', event => {
   if (event.data && event.data.type === 'prefetch-media') {
     event.waitUntil(prefetchMedia(event.source));
   }
+});
+
+/* 通知をタップしたら該当ページを開く（既に開いているタブがあればそこへ移動）。 */
+self.addEventListener('notificationclick', event => {
+  event.notification.close();
+  const url = new URL((event.notification.data || {}).url || 'index.html', self.registration.scope).href;
+  event.waitUntil((async () => {
+    const list = await self.clients.matchAll({ type: 'window', includeUncontrolled: true });
+    for (const c of list) {
+      if ('navigate' in c) { await c.focus(); return c.navigate(url); }
+    }
+    return self.clients.openWindow(url);
+  })());
 });

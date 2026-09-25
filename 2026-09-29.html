@@ -10,7 +10,7 @@
     <link href="https://upload.wikimedia.org" rel="preconnect" />
     <link href="https://tile.openstreetmap.org" rel="preconnect" />
     <link href="assets/styles.css" rel="stylesheet" />
-    <script defer="" src="assets/app.js"></script>
+    <script defer="" src="assets/app.js"></script><script defer="" src="assets/notify.js"></script>
     <script defer="" src="assets/pinmap.js"></script>
 <link href="manifest.webmanifest" rel="manifest"/><link href="assets/icon.svg" rel="icon" type="image/svg+xml"/><link href="assets/apple-touch-icon.png" rel="apple-touch-icon"/><meta content="yes" name="mobile-web-app-capable"/><meta content="Sydney 2026" name="apple-mobile-web-app-title"/><link href="https://api.open-meteo.com" rel="preconnect"/></head>
 
@@ -38,7 +38,7 @@
                 rel="noopener" target="_blank"><span>割り勘フォーム<small>立替の記録・精算</small></span><i>↗</i></a><a
                 href="https://docs.google.com/spreadsheets/d/1zBdbilSw6up5oyqNW6EYrwCMaFDBjgrZafCD71lI1Zc/edit?gid=1643533620#gid=1643533620"
                 rel="noopener" target="_blank"><span>出費管理シート<small>立替の集計・精算表</small></span><i>↗</i></a><a href="https://www.airbnb.jp/rooms/49580120" rel="noopener" target="_blank"><span>宿 Airbnb<small>296 Bulwara Rd · 予約ページ</small></span><i>↗</i></a><a download=""
-                href="sydney-2026-itinerary.ics"><span>全日程 .ICS<small>Australia/Sydney</small></span><i>↓</i></a><button class="drawer__save drawer__save--clear" data-cache-clear="" type="button"><span>キャッシュを削除<small>最新版を取り直す</small></span><i>↻</i></button></div>
+                href="sydney-2026-itinerary.ics"><span>全日程 .ICS<small>Australia/Sydney</small></span><i>↓</i></a><button class="drawer__save" data-notify-open="" type="button"><span>通知<small>リマインダーの設定</small></span><i>🔔</i></button><button class="drawer__save drawer__save--clear" data-cache-clear="" type="button"><span>キャッシュを削除<small>最新版を取り直す</small></span><i>↻</i></button></div>
     </div>
     <main>
         <section class="day-hero"><img alt="" class="day-hero__image" fetchpriority="high"
@@ -103,8 +103,15 @@
                         </div>
                     </article>
                     <article class="agenda__row">
-                        <div class="agenda__time">09:30–11:45</div>
+                        <div class="agenda__time">08:55</div>
                         <div class="agenda__copy"><span class="agenda__no">05</span>
+                            <h3>帰国便 オンラインチェックイン</h3>
+                            <p>9/30 08:55発の24時間前から受付開始。フェリー船内で航空会社のアプリ／サイトから手続きし、搭乗券をスマホに保存しておく。</p>
+                        </div>
+                    </article>
+                    <article class="agenda__row">
+                        <div class="agenda__time">09:30–11:45</div>
+                        <div class="agenda__copy"><span class="agenda__no">06</span>
                             <h3>Taronga Zoo Sydney</h3>
                             <p>開園直後から約2時間15分。見たい動物を事前に絞って回る。</p>
                             <div class="agenda__links"><a class="inline-link"
@@ -117,7 +124,7 @@
                     </article>
                     <article class="agenda__row">
                         <div class="agenda__time">12:00頃–13:10頃</div>
-                        <div class="agenda__copy"><span class="agenda__no">06</span>
+                        <div class="agenda__copy"><span class="agenda__no">07</span>
                             <h3>Taronga → Circular Quay → Bondi</h3>
                             <p>F2でCBDへ戻り、333系統などでBondiへ。フェリー乱れを見込み、昼前後の移動に余白を置く。</p>
                             <div class="agenda__links"><a class="inline-link"
@@ -129,7 +136,7 @@
                     </article>
                     <article class="agenda__row">
                         <div class="agenda__time">13:10–14:00</div>
-                        <div class="agenda__copy"><span class="agenda__no">07</span>
+                        <div class="agenda__copy"><span class="agenda__no">08</span>
                             <h3>bills Bondi Beach</h3>
                             <p>79 Hall St。ランチ後そのままビーチへ出られる。</p>
                             <div class="agenda__links"><a class="inline-link"
@@ -142,7 +149,7 @@
                     </article>
                     <article class="agenda__row">
                         <div class="agenda__time">14:00–15:15</div>
-                        <div class="agenda__copy"><span class="agenda__no">08</span>
+                        <div class="agenda__copy"><span class="agenda__no">09</span>
                             <h3>Bondi Beach</h3>
                             <p>昼〜午後の海沿い散策。遠くまでCoastal Walkへ伸ばさず、夕方のSurry Hills移動を優先。</p>
                             <div class="agenda__links"><a class="inline-link"
@@ -152,7 +159,7 @@
                     </article>
                     <article class="agenda__row">
                         <div class="agenda__time">15:15–15:35</div>
-                        <div class="agenda__copy"><span class="agenda__no">09</span>
+                        <div class="agenda__copy"><span class="agenda__no">10</span>
                             <h3>Anita Gelato Bondi Beach</h3>
                             <p>180 Campbell Parade。ビーチから近く、帰路のバスへつなぎやすい。</p>
                             <div class="agenda__links"><a class="inline-link"
@@ -162,7 +169,7 @@
                     </article>
                     <article class="agenda__row">
                         <div class="agenda__time">15:35–16:30</div>
-                        <div class="agenda__copy"><span class="agenda__no">10</span>
+                        <div class="agenda__copy"><span class="agenda__no">11</span>
                             <h3>Bondi → Surry Hills</h3>
                             <p>Circular Quayまで戻らず、Oxford St / Taylor Square方面へ直接移動してThe Roverへ。</p>
                             <div class="agenda__links"><a class="inline-link"
@@ -172,7 +179,7 @@
                     </article>
                     <article class="agenda__row">
                         <div class="agenda__time">16:30–17:00</div>
-                        <div class="agenda__copy"><span class="agenda__no">11</span>
+                        <div class="agenda__copy"><span class="agenda__no">12</span>
                             <h3>Surry Hills・予備時間</h3>
                             <p>道路混雑やバス遅延の吸収時間。早着ならThe Rover周辺で休憩。</p>
                             <div class="agenda__links"><a class="inline-link"
@@ -182,7 +189,7 @@
                     </article>
                     <article class="agenda__row">
                         <div class="agenda__time">17:00–18:00</div>
-                        <div class="agenda__copy"><span class="agenda__no">12</span>
+                        <div class="agenda__copy"><span class="agenda__no">13</span>
                             <h3>The Rover</h3>
                             <p>75 Campbell St。</p>
                             <div class="agenda__links"><a class="inline-link"
@@ -195,7 +202,7 @@
                     </article>
                     <article class="agenda__row">
                         <div class="agenda__time">18:00–18:40</div>
-                        <div class="agenda__copy"><span class="agenda__no">13</span>
+                        <div class="agenda__copy"><span class="agenda__no">14</span>
                             <h3>The Rover → Blackbird Cafe</h3>
                             <p>徒歩または公共交通でDarling Harbour（Cockle Bay Wharf）へ。19:00入店まで20分以上の余白を残す。</p>
                             <div class="agenda__links"><a class="inline-link"
@@ -205,7 +212,7 @@
                     </article>
                     <article class="agenda__row">
                         <div class="agenda__time">19:00–21:00</div>
-                        <div class="agenda__copy"><span class="agenda__no">14</span>
+                        <div class="agenda__copy"><span class="agenda__no">15</span>
                             <h3>Blackbird Cafe</h3>
                             <p>Cockle Bay Wharf, Wheat Road Balcony Level 1。カンガルーステーキ（$45）あり。平日8:00–21:30営業。</p>
                             <div class="agenda__links"><a class="inline-link"
@@ -224,6 +231,7 @@
                 <ul class="editorial-list">
                     <li>Tarongaの9月の営業は9:30–17:00。滞在は2時間15分なので見たいエリアを事前に絞る。</li>
                     <li>The Rover 17:00–18:00、Blackbird Cafe 19:00–21:00は固定。間に1時間あるので徒歩でも余裕あり。</li>
+                    <li>08:55から帰国便のオンラインチェックインが可能（出発24時間前）。明朝は05:30出発なので今日中に済ませる。</li>
                 </ul>
             </aside>
         </section>
